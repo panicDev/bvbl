@@ -1,27 +1,42 @@
 buildscript {
-    ext.kotlinVersion = '1.5.0'
     ext.buildConfig = [
             'versionCode'      : 1,
-            'versionName'      : "1.0.2",
-            'compileSdkVersion': 30,
-            'minSdkVersion'    : 14,
-            'targetSdkVersion' : 30
+            'versionName'      : "1.0.3",
+            'compileSdkVersion': 34,
+            'minSdkVersion'    : 21,
+            'targetSdkVersion' : 33
     ]
+    ext {
+        appCompatVersion = '1.6.1'
+        brvahVersion = '3.0.14'
+        constraintLayoutVersion = '2.1.4'
+        coreVersion = '1.7.0'
+        espressoVersion = '3.5.1'
+        fragmentVersion = '1.6.2'
+        glideVersion = '4.12.0'
+        kotlinVersion = '1.8.10'
+        lifecycleVersion = '2.6.2'
+        junitExtVersion = '1.1.5'
+        junitVersion = '4.13.2'
+        materialVersion = '1.10.0'
+        multiTypeVersion = '4.3.0'
+    }
     repositories {
         google()
         mavenCentral()
     }
     dependencies {
-        classpath 'com.android.tools.build:gradle:4.2.1'
+        classpath 'com.android.tools.build:gradle:8.1.4'
         classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlinVersion"
     }
 }
 
 allprojects {
     repositories {
+    
         google()
         mavenCentral()
-        maven { url 'https://jitpack.io' }
+           maven { url 'https://jitpack.io' }
     }
 }
 

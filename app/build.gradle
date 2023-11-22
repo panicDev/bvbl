@@ -4,11 +4,10 @@ plugins {
 }
 
 android {
-    compileSdkVersion 30
-    buildToolsVersion "30.0.3"
+    compileSdk 34
 
     defaultConfig {
-        applicationId "com.dylanc.viewbinding.sample"
+        applicationId "com.bonifes.viewbinding.sample"
         minSdkVersion buildConfig.minSdkVersion
         targetSdkVersion buildConfig.targetSdkVersion
         versionCode buildConfig.versionCode
@@ -25,33 +24,36 @@ android {
     }
 
     compileOptions {
-        sourceCompatibility JavaVersion.VERSION_1_8
-        targetCompatibility JavaVersion.VERSION_1_8
+        sourceCompatibility JavaVersion.VERSION_17
+        targetCompatibility JavaVersion.VERSION_17
     }
 
     kotlinOptions {
-        jvmTarget = '1.8'
+        jvmTarget = "17"
     }
 
     buildFeatures {
         viewBinding = true
     }
+
+    namespace 'com.bonifes.viewbinding.sample'
 }
 
 dependencies {
-    implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlinVersion"
-    implementation 'androidx.core:core-ktx:1.3.2'
-    implementation 'androidx.appcompat:appcompat:1.2.0'
-    implementation 'com.google.android.material:material:1.3.0'
-    implementation "androidx.recyclerview:recyclerview:1.2.0"
-    implementation 'com.drakeet.multitype:multitype:4.2.0'
-    implementation 'com.github.CymChad:BaseRecyclerViewAdapterHelper:3.0.6'
-    implementation 'androidx.constraintlayout:constraintlayout:2.0.4'
-    implementation project(path: ':viewbinding')
+ implementation "androidx.appcompat:appcompat:$appCompatVersion"
+    implementation "androidx.constraintlayout:constraintlayout:$constraintLayoutVersion"
+    implementation "com.google.android.material:material:$materialVersion"
+    implementation "androidx.fragment:fragment-ktx:$fragmentVersion"
+    implementation "com.drakeet.multitype:multitype:$multiTypeVersion"
+    implementation "io.github.cymchad:BaseRecyclerViewAdapterHelper:$brvahVersion"
+     implementation project(path: ':viewbinding-ktx')
     implementation project(path: ':viewbinding-nonreflection')
     implementation project(path: ':viewbinding-base')
     implementation project(path: ':viewbinding-brvah')
-    testImplementation 'junit:junit:4.13.2'
-    androidTestImplementation 'androidx.test.ext:junit:1.1.2'
-    androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
+
+    // implementation 'com.github.CymChad:BaseRecyclerViewAdapterHelper:3.0.6'
+
+    testImplementation "junit:junit:$junitVersion"
+    androidTestImplementation "androidx.test.ext:junit:$junitExtVersion"
+    androidTestImplementation "androidx.test.espresso:espresso-core:$espressoVersion"
 }
