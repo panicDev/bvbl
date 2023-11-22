@@ -2,9 +2,9 @@ package com.bonifes.viewbinding.sample.item
 
 import android.content.Context
 import android.view.ViewGroup
-import com.drakeet.multitype.ItemViewDelegate
 import com.bonifes.viewbinding.BindingViewHolder
 import com.bonifes.viewbinding.sample.databinding.ItemFooBinding
+import com.drakeet.multitype.ItemViewDelegate
 
 class FooViewDelegate : ItemViewDelegate<Foo, BindingViewHolder<ItemFooBinding>>() {
 
